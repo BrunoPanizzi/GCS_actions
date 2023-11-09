@@ -17,7 +17,6 @@
 
       * {
         box-sizing: border-box;
-        /* font-family: sans-serif; */
       }
 
       body,
@@ -59,17 +58,48 @@
         color: white;
       }
 
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
       .code-area {
-        background-color: black;
+        background-color: color-mix(in srgb, var(--base-color) 15%, black);
         margin-inline: 0.5rem;
+        width: min-content;
+        margin-inline: auto;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.625rem;
       }
 
       td {
         text-align: start;
       }
 
-      .hljs-ln-n::after {
+      pre {
+        margin: 0;
+      }
+
+      .hljs-ln-numbers {
+        text-align: end;
+        padding-right: 0.5rem;
+      }
+      .hljs-ln-numbers::after {
         content: attr(data-line-number);
+      }
+
+      .hljs-attr {
+        color: tomato;
+      }
+
+      .hljs-string {
+        color: skyblue;
+      }
+
+      .hljs-ln-numbers,
+      .hljs-bullet,
+      .hljs-colon {
+        color: gray;
       }
     </style>
   </head>
@@ -82,111 +112,105 @@
         github actions!!
       </p>
 
+      <h3>Esse é o código que faz o deploy:</h3>
       <div class="code-area">
-        <pre>
-          <code class="yml hljs language-yaml">
-            <table class="hljs-ln">
+        <code class="yml hljs language-yaml">
+          <pre><table class="hljs-ln">
               <tbody>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="1"><div class="hljs-ln-n" data-line-number="1"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="1"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">na</span> <span class="hljs-string">AWS</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="1"></td>
+                  <td><span class="hljs-attr">name</span><span class="hljs-colon">:</span> <span class="hljs-string">Deploy na AWS</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="2"><div class="hljs-ln-n" data-line-number="2"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="2"> </td>
+                  <td class="hljs-ln-numbers" data-line-number="2"></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="3"><div class="hljs-ln-n" data-line-number="3"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="3"><span class="hljs-attr">on:</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="3"></td>
+                  <td><span class="hljs-attr">on</span><span class="hljs-colon">:</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="4"><div class="hljs-ln-n" data-line-number="4"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="4">  <span class="hljs-attr">push:</span> </td>
+                  <td class="hljs-ln-numbers" data-line-number="4"></td>
+                  <td>  <span class="hljs-attr">push</span><span class="hljs-colon">:</span> </td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="5"><div class="hljs-ln-n" data-line-number="5"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="5">    <span class="hljs-attr">branches:</span> <span class="hljs-string">master</span> </td>
+                  <td class="hljs-ln-numbers" data-line-number="5"></td>
+                  <td>    <span class="hljs-attr">branches</span><span class="hljs-colon">:</span> <span class="hljs-string">master</span> </td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="6"><div class="hljs-ln-n" data-line-number="6"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="6"> </td>
+                  <td class="hljs-ln-numbers" data-line-number="6"></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="7"><div class="hljs-ln-n" data-line-number="7"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="7"><span class="hljs-attr">jobs:</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="7"></td>
+                  <td><span class="hljs-attr">jobs</span><span class="hljs-colon">:</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="8"><div class="hljs-ln-n" data-line-number="8"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="8">  <span class="hljs-attr">deploy:</span> </td>
+                  <td class="hljs-ln-numbers" data-line-number="8"></td>
+                  <td>  <span class="hljs-attr">deploy</span><span class="hljs-colon">:</span> </td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="9"><div class="hljs-ln-n" data-line-number="9"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="9">    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="9"></td>
+                  <td>    <span class="hljs-attr">runs-on</span><span class="hljs-colon">:</span> <span class="hljs-string">ubuntu-latest</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="10"><div class="hljs-ln-n" data-line-number="10"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="10">    <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="10"></td>
+                  <td>    <span class="hljs-attr">name</span><span class="hljs-colon">:</span> <span class="hljs-string">Deploy</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="11"><div class="hljs-ln-n" data-line-number="11"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="11"> </td>
+                  <td class="hljs-ln-numbers" data-line-number="11"></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="12"><div class="hljs-ln-n" data-line-number="12"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="12">    <span class="hljs-attr">steps:</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="12"></td>
+                  <td>    <span class="hljs-attr">steps</span><span class="hljs-colon">:</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="13"><div class="hljs-ln-n" data-line-number="13"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="13">      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="13"></td>
+                  <td>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name</span><span class="hljs-colon">:</span> <span class="hljs-string">Checkout</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="14"><div class="hljs-ln-n" data-line-number="14"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="14">        <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="14"></td>
+                  <td>        <span class="hljs-attr">uses</span><span class="hljs-colon">:</span> <span class="hljs-string">actions/checkout@v2</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="15"><div class="hljs-ln-n" data-line-number="15"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="15">        </td>
+                  <td class="hljs-ln-numbers" data-line-number="15"></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="16"><div class="hljs-ln-n" data-line-number="16"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="16">      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">AWS</span> <span class="hljs-string">CLI</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="16"></td>
+                  <td>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name</span><span class="hljs-colon">:</span> <span class="hljs-string">Set</span> <span class="hljs-string">up</span> <span class="hljs-string">AWS</span> <span class="hljs-string">CLI</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="17"><div class="hljs-ln-n" data-line-number="17"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="17">        <span class="hljs-attr">uses:</span> <span class="hljs-string">aws-actions/configure-aws-credentials@v1</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="17"></td>
+                  <td>        <span class="hljs-attr">uses</span><span class="hljs-colon">:</span> <span class="hljs-string">aws-actions/configure-aws-credentials@v1</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="18"><div class="hljs-ln-n" data-line-number="18"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="18">        <span class="hljs-attr">with:</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="18"></td>
+                  <td>        <span class="hljs-attr">with</span><span class="hljs-colon">:</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="19"><div class="hljs-ln-n" data-line-number="19"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="19">          <span class="hljs-attr">aws-access-key-id:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.AWS_ACCESS_KEY_ID</span> <span class="hljs-string">}}</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="19"></td>
+                  <td>          <span class="hljs-attr">aws-access-key-id</span><span class="hljs-colon">:</span> <span class="hljs-string">${{ secrets.AWS_ACCESS_KEY_ID }}</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="20"><div class="hljs-ln-n" data-line-number="20"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="20">          <span class="hljs-attr">aws-secret-access-key:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.AWS_SECRET_ACCESS_KEY</span> <span class="hljs-string">}}</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="20"></td>
+                  <td>          <span class="hljs-attr">aws-secret-access-key</span><span class="hljs-colon">:</span> <span class="hljs-string">${{ secrets.AWS_SECRET_ACCESS_KEY }}</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="21"><div class="hljs-ln-n" data-line-number="21"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="21">          <span class="hljs-attr">aws-region:</span> <span class="hljs-string">sa-east-1</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="21"></td>
+                  <td>          <span class="hljs-attr">aws-region</span><span class="hljs-colon">:</span> <span class="hljs-string">sa-east-1</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="22"><div class="hljs-ln-n" data-line-number="22"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="22"> </td>
+                  <td class="hljs-ln-numbers" data-line-number="22"></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="23"><div class="hljs-ln-n" data-line-number="23"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="23">      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">S3</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="23"></td>
+                  <td>      <span class="hljs-bullet">-</span> <span class="hljs-attr">name</span><span class="hljs-colon">:</span> <span class="hljs-string">Deploy</span> <span class="hljs-string">to</span> <span class="hljs-string">S3</span></td>
                 </tr>
                 <tr>
-                  <td class="hljs-ln-line hljs-ln-numbers" data-line-number="24"><div class="hljs-ln-n" data-line-number="24"></div></td>
-                  <td class="hljs-ln-line hljs-ln-code" data-line-number="24">        <span class="hljs-attr">run:</span> <span class="hljs-string">aws</span> <span class="hljs-string">s3</span> <span class="hljs-string">cp</span> <span class="hljs-string">index.html</span> <span class="hljs-string">s3://teste-gcs/index.html</span></td>
+                  <td class="hljs-ln-numbers" data-line-number="24"></td>
+                  <td>        <span class="hljs-attr">run</span><span class="hljs-colon">:</span> <span class="hljs-string">aws s3 cp index.html s3://teste-gcs/index.html</span></td>
                 </tr>
               </tbody>
-            </table>
-          </code>
-        </pre>
+            </table></pre>
+        </code>
       </div>
 
       <p></p>
